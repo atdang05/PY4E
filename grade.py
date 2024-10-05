@@ -1,19 +1,22 @@
 try:
-    score = float(input("Enter score: "))
+    s = float(input("Enter score: "))
 except:
-    score = -1
+    s = -1
 
-if score > 1 or score < 0:
-    grade = "Bad score"
-elif score >= 0.9:
-    grade = "A"
-elif score >= 0.8:
-    grade = "B"
-elif score >= 0.7:
-    grade = "C"
-elif score >= 0.6:
-    grade = "D"
-else:
-    grade = "F"
 
-print(grade)
+def computegrade(score):
+    if score > 1 or score < 0:
+        return "Bad score"
+    elif score >= 0.9:
+        return "A"
+    elif score >= 0.8:
+        return "B"
+    elif score >= 0.7:
+        return "C"
+    elif score >= 0.6:
+        return "D"
+    else:
+        return "F"
+
+
+print(computegrade(s))
