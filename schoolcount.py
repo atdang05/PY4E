@@ -13,13 +13,8 @@ for line in fhand:
         continue
 
     words = line.split()
-    email = words[1]
-    counts[email] = counts.get(email, 0) + 1
+    mail = words[1].split("@")
+    domain = mail[1]
+    counts[domain] = counts.get(domain, 0) + 1
 
-bigmail = None
-
-for mail in counts:
-    if bigmail == None or counts[bigmail] < counts[mail]:
-        bigmail = mail
-
-print(bigmail, counts[bigmail])
+print(counts)
