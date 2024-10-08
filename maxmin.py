@@ -1,11 +1,10 @@
-max = None
-min = None
+nums = list()
 
 while True:
     inp = input("Enter a number: ")
 
     try:
-        inp = int(inp)
+        inp = float(inp)
     except:
         if inp == "done":
             break
@@ -13,10 +12,7 @@ while True:
             print("Invalid input")
             continue
 
-    if max == None or max < inp:
-        max = inp
+    nums.append(inp)
 
-    if min == None or min > inp:
-        min = inp
-
-print(max, min)
+print("Maximum:", max(nums))
+print("Minimum:", min(nums))
