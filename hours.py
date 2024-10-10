@@ -13,8 +13,11 @@ for line in fhand:
         continue
 
     words = line.split()
-    counts[words[1]] = counts.get(words[1], 0) + 1  # words[1] is email address
+    hour, minute, second = words[5].split(":")
+    counts[hour] = counts.get(hour, 0) + 1
 
-commits = [(count, email) for email, count in counts.items()]
-commits.sort(reverse=True)
-print(commits[0][1], commits[0][0])
+hours = [(hour, count) for hour, count in counts.items()]
+hours.sort()
+
+for item in hours:
+    print(item[0], item[1])
